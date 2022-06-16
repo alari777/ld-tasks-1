@@ -53,11 +53,13 @@ N_4 - one more number
 
 N_m - one more number
 
+![formula](./imgs/indexS.PNG)
+
 # Second task: Anagram problem
 
 Complexity is: O(n)
 
-For both words: is filling an array for first/second word where `key` of each element is `a letter`. The value of this element is amount of this letter. Also this array will be sort from `A` to `Z` by a key. Then I need to compare these arrays and if they are equal then in that case these words are anagrams.
+For both words: is filling an array for first/second word where key of each element is a letter. The value of this element is amount of this letter. Also this array will be sorted by a key from A to Z. Then it is necessary to compare these arrays and if they are equal then in that case these words are anagrams.
 
 To start open your console and enter next instruction:
 `php indexA.php $word1 $word2`
@@ -66,6 +68,7 @@ $word1 - first word
 
 $word2 - second word
 
+![formula](./imgs/indexA.PNG)
 
 # Tests
 

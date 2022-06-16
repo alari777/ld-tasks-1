@@ -12,8 +12,8 @@ if (isset($argv[1]) && isset($argv[2])) {
     $outAnagram = new CheckAnagram();
     $outAnagram->isAnagram($word1, $word2);
     echo ($outAnagram->isAnagram($word1, $word2) === true)
-        ? "Anagram: These words: `$word1` and `$word2` are anagrams."
-        : "Anagram: These words: `$word1` and `$word2` are not anagrams.";
+        ? "Anagram: These words: `$word1` vs `$word2` are anagrams.\r\n"
+        : "Anagram: These words: `$word1` vs `$word2` are not anagrams.\r\n";
 } else {
-    echo "Please enter 2 (two) words ... ";
+    echo "Please enter 2 (two) words ...\r\n";
 }
