@@ -14,17 +14,17 @@ class FindMaxSubarrayTest extends TestCase
         $this->maxsubarray = new FindMaxSubarray();
     }
 
-    public function testIntContiguous()
+    public function testIntContiguous(): void
     {
         $this->assertEquals(6, $this->maxsubarray->contiguous([-1, 1, 5, -6, 3]));
     }
 
-    public function testFloatContiguous()
+    public function testFloatContiguous(): void
     {
         $this->assertEquals(6, $this->maxsubarray->contiguous([-1.0, 1.0, 5.0, -6.0, 3.0]));
     }
 
-    public function testStrContiguous()
+    public function testStrContiguous(): void
     {
         $this->assertEquals(6, $this->maxsubarray->contiguous([-1, 1, 5, '-6', '3']));
     }
