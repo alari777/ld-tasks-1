@@ -15,17 +15,15 @@ Open your console and follow next steps:
 >`composer update`
 
 Structure:
-- html - generated folder with current covering tests (by `phpunit`)
-- src - folder with `classes`
-- tests - folder with `tests`
-- vendor - installed dependencies via composer
-- indexA.php - script for `anagram problem`
-- indexS.php - script for `maximum subarray`
-- phpunit.xml - short config for `phpunit` 
+- `html` - it is automatically generated folder with current covering tests (by `phpunit`)
+- `src` - this is folder with `classes`
+- `tests` - this is folder with `tests`
+- `vendor` - installed dependencies via composer
+- `indexA.php` - this is script for `anagram problem`
+- `indexS.php` - this is script for `maximum subarray`
+- `phpunit.xml` - this is short XML config for `phpunit` 
 
 # First task: Maximum subarray
-
----
 
 ## Short description
 
@@ -41,19 +39,19 @@ We need to keep all these values e.g. in some array OR to make the comparing cur
 > I think that working array has to have at least one negative element because in that case (if all elements are positive) we just need to calculate summa of all values of current array and the task becomes irrelevant.
 
 To start open your console and enter next instruction:
-`php indexS.php N1 N2 N3 N4`
+`php indexS.php N_1 N_2 N_3 N_4`
 
-N1 - first number
+N_1 - first number
 
-N2 - second number
+N_2 - second number
 
-N3 - one more number
+N_3 - one more number
 
-N4 - one more number
+N_4 - one more number
 
 ...
 
-NM - one more number
+N_m - one more number
 
 # Second task: Anagram problem
 
@@ -71,14 +69,12 @@ $word2 - second word
 
 # Tests
 
-To common tests: `vendor/bin/phpunit tests`
+To start common tests: `vendor/bin/phpunit tests`
 
----
-
-Folder `html` - it is generated folder where you can see the covering of tests via browser. In that case you need to have suitable version of extension named `php_xdebug.dll` and you need to add next lines in `php.ini`:
-- zend_extension=xdebug
-- xdebug.mode=coverage
-
-To start tests with covering in html: `vendor/bin/phpunit tests --coverage-html html`
-
-To see result you should to open `html/index.html` in your browser
+> Folder `html` - it is automatically generated folder where you can see the covering of tests via browser. In that case you need to have suitable version of extension named `php_xdebug.dll` and you need to add next lines in `php.ini`:
+> - zend_extension=xdebug
+> - xdebug.mode=coverage
+>
+> To start tests with covering in html: `vendor/bin/phpunit tests --coverage-html html`
+>
+> To see results you should to open `html/index.html` in your browser
