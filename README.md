@@ -80,4 +80,4 @@ To start common tests: `vendor/bin/phpunit tests`
 >
 > To start tests with covering in html: `vendor/bin/phpunit tests --coverage-html html`
 >
-> To see results you should to open `html/index.html` in your browser
+> To see results you should open `html/index.html` in your browser
