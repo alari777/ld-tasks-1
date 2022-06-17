@@ -81,3 +81,20 @@ To start common tests: `vendor/bin/phpunit tests`
 > To start tests with covering in html: `vendor/bin/phpunit tests --coverage-html html`
 >
 > To see results you should open `html/index.html` in your browser
+
+# Docker
+
+You can start this task via Docker.
+
+Copy Docker file, go to empty folder, insert this file.
+Open your terminal and type next commands: 
+- `sudo docker build -t ld-image .`
+![formula](./imgs/docker-build.PNG)
+- `sudo docker run -it --name ld-container-1 ld-image:latest /bin/bash`
+
+In that case you will be inside of new created container. 
+Well e.g. you are able execute with next
+- `php indexS.php -1 4 5 6 -3 60`
+- `php indexA.php CAR RAT`
+- `vendor/bin/phpunit tests`
+![formula](./imgs/docker-run-container.PNG)
