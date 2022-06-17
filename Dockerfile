@@ -18,9 +18,10 @@ WORKDIR /var/www/html/ld
 # Clone git project
 RUN git clone https://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@github.com/alari777/ld-tasks-1.git .
 
-# Install dependens and update autoload routes
+# Install dependencies and update autoload routes
 RUN composer update && \
         composer dump-autoload --optimize
 
+# Print php and composer versions
 CMD php --version && \
         composer --version
