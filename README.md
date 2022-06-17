@@ -8,14 +8,14 @@ Requirements:
 
 # Preparing
 
-Open your console and follow next steps:
+Please open your console and follow next simple steps:
 
-> `git clone https://github.com/alari777/ld-tasks-1.git .`
->
->`composer update`
+- `git clone https://github.com/alari777/ld-tasks-1.git .`
+- `composer update`
+- `composer dump-autoload`
 
-Structure:
-- `html` - it is automatically generated folder with current covering tests (by `phpunit`)
+Well, in that case we can get next structure:
+- `html` - this is automatically generated folder with current covering tests (by `phpunit`)
 - `src` - this is folder with `classes`
 - `tests` - this is folder with `tests`
 - `vendor` - installed dependencies via composer
@@ -31,12 +31,11 @@ Structure:
 
 This algorithm has complexity: O(n)
 
-We need to go through the array and accumulate the current partial sum in some variable e.g. named `sum`. If at some point 'sum' turns out to be negative, then we set value of `sum`  as `0`. It is claimed that the maximum of all values of the variable `sum` that occurred during the work will be the resolve to the problem.
+We need to go through the array and accumulate the current partial sum in some variable e.g. named `sum`. If at some point `sum` turns out to be negative, then we set value of `sum`  as `0`. It is claimed that the maximum of all values of the variable `sum` that occurred during the work will be the resolve to the problem.
 
-> The point about `sum`:
-We need to keep all these values e.g. in some array OR to make the comparing current and previous value of `sum`. Actually I think both ways are good and it depends on what you prefer.
+> In short about `sum`: we need to keep all these values e.g. in some array OR to make the comparing current and previous value of `sum`. Actually I think both ways are good and it depends on what you prefer.
 
-> I think that working array has to have at least one negative element because in that case (if all elements are positive) we just need to calculate summa of all values of current array and the task becomes irrelevant.
+> I think a work array has to have at least one negative element because in that case (if all elements are positive) we just need to calculate total sum of all values of current array and the task becomes irrelevant.
 
 To start open your console and enter next instruction:
 `php indexS.php N_1 N_2 N_3 N_4`
@@ -62,11 +61,11 @@ Complexity is: O(n)
 For both words: is filling an array for first/second word where key of each element is a letter. The value of this element is amount of this letter. Also this array will be sorted by a key from A to Z. Then it is necessary to compare these arrays and if they are equal then in that case these words are anagrams.
 
 To start open your console and enter next instruction:
-`php indexA.php $word1 $word2`
+`php indexA.php ANY_WORD_1 ANY_WORD_2`
 
-$word1 - first word
+ANY_WORD_1 - any word
 
-$word2 - second word
+ANY_WORD_2 - any word
 
 ![formula](./imgs/indexA.PNG)
 
@@ -74,22 +73,23 @@ $word2 - second word
 
 To start common tests: `vendor/bin/phpunit tests`
 
-> Folder `html` - it is automatically generated folder where you can see the covering of tests via browser. In that case you need to have suitable version of extension named `php_xdebug.dll` and you need to add next lines in `php.ini`:
+> Folder `html` - it is automatically generated folder where you can see the covering of tests via browser. In that case you should have suitable version of extension named `php_xdebug.dll` and you should add next lines in `php.ini`:
 > - zend_extension=xdebug
 > - xdebug.mode=coverage
 >
 > To start tests with covering in html: `vendor/bin/phpunit tests --coverage-html html`
 >
-> To see results you should open `html/index.html` in your browser
+> To see results you should open `html/index.html` in your browser.
 
 # Docker
 
 You can start this task via Docker.
 
-Copy Docker file, go to empty folder, insert this file.
-Open your terminal and type next commands: 
-- `sudo docker build -t ld-image .`
+Please copy current Docker file, then go to empty folder and insert this file.
+Please open your terminal and type next commands: 
+- `sudo docker build -t ld-image .` Result is:
 ![formula](./imgs/docker-build.PNG)
+
 - `sudo docker run -it --name ld-container-1 ld-image:latest /bin/bash`
 
 In that case you will be inside of new created container. 
@@ -98,3 +98,12 @@ Well e.g. you are able execute with next
 - `php indexA.php CAR RAT`
 - `vendor/bin/phpunit tests`
 ![formula](./imgs/docker-run-container.PNG)
+
+# Personal access tokens at github
+
+Please remember that you need to have personal token at github.
+
+Problem: the oauthtoken is needed to access private github repositories and bypass their IP-based slow speed API limitation. Composer may prompt you for credentials if necessary.
+
+You can use this link:
+https://github.com/settings/tokens
