@@ -87,7 +87,10 @@ You can start this task via Docker.
 
 Please copy current Docker file, then go to empty folder and insert this file.
 Please open your terminal and type next commands: 
-- `sudo docker build -t ld-image .` Result is:
+- `sudo docker build -t ld-image .` 
+
+Result is:
+
 ![formula](./imgs/docker-build.PNG)
 
 - `sudo docker run -it --name ld-container-1 ld-image:latest /bin/bash`
@@ -97,6 +100,7 @@ Well e.g. you are able execute with next
 - `php indexS.php -1 4 5 6 -3 60`
 - `php indexA.php CAR RAT`
 - `vendor/bin/phpunit tests`
+
 ![formula](./imgs/docker-run-container.PNG)
 
 # Personal access tokens at github
