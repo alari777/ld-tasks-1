@@ -80,6 +80,10 @@ To start common tests: `vendor/bin/phpunit tests`
 > To start tests with covering in html: `vendor/bin/phpunit tests --coverage-html html`
 >
 > To see results you should open `html/index.html` in your browser.
+>
+> That is really clear and simple instruction how to check is this extension active and what need to do to add this extension:
+>
+> `https://xdebug.org/wizard`
 
 # Docker
 
