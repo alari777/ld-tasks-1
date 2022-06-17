@@ -15,13 +15,13 @@ Please open your console and follow next simple steps:
 - `composer dump-autoload`
 
 Well, in that case we can get next structure:
-- `html` - this is automatically generated folder with current covering tests (by `phpunit`)
-- `src` - this is folder with `classes`
-- `tests` - this is folder with `tests`
-- `vendor` - installed dependencies via composer
-- `indexA.php` - this is script for `anagram problem`
-- `indexS.php` - this is script for `maximum subarray`
-- `phpunit.xml` - this is short XML config for `phpunit` 
+- `html` - this is automatically generated folder with current covering tests (by `phpunit`);
+- `src` - this is folder with `classes`: `Anagram.php` and `MaxSubarray.php` are interfaces. `CheckAnagram.php` and `FindMasSubarray.php` are implementations of these interfaces;
+- `tests` - this is folder with `tests`;
+- `vendor` - installed dependencies via composer;
+- `indexA.php` - this is script for `anagram problem`;
+- `indexS.php` - this is script for `maximum subarray`;
+- `phpunit.xml` - this is short XML config for `phpunit`. 
 
 # First task: Maximum subarray
 
