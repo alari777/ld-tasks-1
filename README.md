@@ -74,8 +74,8 @@ ANY_WORD_2 - any word
 To start common tests: `vendor/bin/phpunit tests`
 
 > Folder `html` - it is automatically generated folder where you can see the covering of tests via browser. In that case you should have suitable version of extension named `php_xdebug.dll` and you should add next lines in `php.ini`:
-> - zend_extension=xdebug
-> - xdebug.mode=coverage
+> - `zend_extension=xdebug`
+> - `xdebug.mode=coverage`
 >
 > To start tests with covering in html: `vendor/bin/phpunit tests --coverage-html html`
 >
@@ -85,7 +85,42 @@ To start common tests: `vendor/bin/phpunit tests`
 
 You can start this task via Docker.
 
-Please copy current Docker file, then go to empty folder and insert this file.
+Please go to empty folder and:
+
+- Or create `Dockerfile` and insert there this pixel of code:
+
+```
+FROM php:7.4.29-cli
+  
+# Install software
+RUN apt-get update && apt-get upgrade -y && \
+      apt-get install -y nodejs \
+      unzip \
+      curl \
+      zip \
+      git \
+      npm
+
+# Install composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Set working directory
+WORKDIR /var/www/html/ld
+
+# Clone git project
+RUN git clone https://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@github.com/alari777/ld-tasks-1.git .
+
+# Install dependencies and update autoload routes
+RUN composer update && \
+      composer dump-autoload --optimize
+
+# Print php and composer versions
+CMD php --version && \
+      composer --version
+```
+
+- Or copy current `Dockerfile` into this empty folder.
+
 Please open your terminal and type next commands: 
 - `sudo docker build -t ld-image .` 
 
@@ -107,7 +142,7 @@ Well e.g. you are able execute with next
 
 Please remember that you need to have personal token at github.
 
-Problem: the oauthtoken is needed to access private github repositories and bypass their IP-based slow speed API limitation. Composer may prompt you for credentials if necessary.
+Problem: the `oauthtoken` is needed to access private github repositories and bypass their IP-based slow speed API limitation. Composer may prompt you for credentials if necessary.
 
 You can use this link:
 https://github.com/settings/tokens
