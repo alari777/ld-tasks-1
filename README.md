@@ -78,6 +78,7 @@ To start common tests: `vendor/bin/phpunit tests`
 > - `xdebug.mode=coverage`
 >
 > To start tests with covering in html: `vendor/bin/phpunit tests --coverage-html html`
+>
 >![formula](./imgs/phpunit-html-covering.PNG)
 >
 > To see results you should open `html/index.html` in your browser.
