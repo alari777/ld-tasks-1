@@ -28,4 +28,9 @@ class FindMaxSubarrayTest extends TestCase
     {
         $this->assertEquals(6, $this->maxsubarray->contiguous([-1, 1, 5, '-6', '3']));
     }
+
+    public function testZeroContiguous(): void
+    {
+        $this->assertEquals(0, $this->maxsubarray->contiguous([-1, -2, -7]));
+    }
 }
