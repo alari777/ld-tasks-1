@@ -12,7 +12,10 @@ class FindMaxSubarray implements MaxSubarray
         // TODO: Implement contiguous() method.
 
         $sum = 0;
-        $subtotals = [];
+        // If all elements are negative so in that case there are no any exist intermediate values.
+        // Also in that case max subtotal is `0` and it is only one.
+        // Also if this array consist at least one value then we don't get any error using `max` function. It is good.
+        $subtotals = [0];
         // Complexity is: O(n)
         foreach ($array as $value) {
             // Is getting current summa
