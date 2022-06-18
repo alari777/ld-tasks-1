@@ -23,6 +23,17 @@ class CheckAnagramTest extends TestCase
         $this->assertEquals(true, $this->anagram->isAnagram('CAR', 'RCA'));
     }
 
+    public function testTrueLongIsAnagram(): void
+    {
+        $this->assertEquals(true, $this
+            ->anagram
+            ->isAnagram('CHARGOGGAGOGGMANCHAUGGAGOGGCHAUBUNAGUNGAMAUGG', 'GOUCOCAUAMGAAGBGUUMHRNCAHNGNAGAGGOGGGAGHUGGAG'));
+
+        $this->assertEquals(true, $this
+            ->anagram
+            ->isAnagram('PNEUMONOULTRAMICROSCOPICSILICOVOLCANOKONIOSIS', 'MINOOCIOOAKACSSPSUMNSURIOCOCTIVLLNNPOOOCRIELI'));
+    }
+
     public function testFalseIsAnagram(): void
     {
         $this->assertEquals(false, $this->anagram->isAnagram('CAR', 'RAO'));
@@ -30,5 +41,14 @@ class CheckAnagramTest extends TestCase
         $this->assertEquals(false, $this->anagram->isAnagram('CAR', 'RA'));
     }
 
-    // Unfortunately I can not figure out one more really productive test because this function return just true/false.
+    public function testFalseLongIsAnagram(): void
+    {
+        $this->assertEquals(false, $this
+            ->anagram
+            ->isAnagram('CHARGOGGAGOGGMANCHAUGGAGOGGCHAUBUNAGUNGAMAUGG', 'WOUCOCAUAMGAAGBGUUMHRNCAHNGNAGAGGOGGGAGHUGGAG'));
+
+        $this->assertEquals(false, $this
+            ->anagram
+            ->isAnagram('PNEUMONOULTRAMICROSCOPICSILICOVOLCANOKONIOSIS', 'WINOOCIOOAKACSSPSUMNSURIOCOCTIVLLNNPOOOCRIELI'));
+    }
 }
